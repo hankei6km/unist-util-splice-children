@@ -1,0 +1,57 @@
+{
+  "name": "@hankei6km/unist-util-splice-children",
+  "version": "0.0.1",
+  "description": "unist utility to splice children in an element",
+  "license": "MIT",
+  "author": "hankei6km <hankei6km@gmail.com> (https://github.com/hankei6km)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankei6km/unist-util-splice-children.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hankei6km/unist-util-splice-children/issues"
+  },
+  "keywords": [
+    "unist"
+  ],
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./utils/basic": {
+      "types": "./dist/utils/basic/index.d.ts",
+      "import": "./dist/utils/basic/index.js"
+    },
+    "./utils/folders": {
+      "types": "./dist/utils/folders/index.d.ts",
+      "import": "./dist/utils/folders/index.js"
+    },
+    "./utils/segments": {
+      "types": "./dist/utils/segments/index.d.ts",
+      "import": "./dist/utils/segments/index.js"
+    }
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "node --test",
+    "test:coverage": "npm run test -- --experimental-test-coverage",
+    "lint:types": "tsc --noEmit -p tsconfig.json",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "unist-util-is": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "@types/unist": "^3.0.3",
+    "typescript": "^7.0.2",
+    "unist-builder": "^4.0.0"
+  }
+}
