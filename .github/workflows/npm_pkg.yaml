@@ -71,4 +71,4 @@ jobs:
       - name: Build
         run: npm run build
 
-      - run: npm publish --access public
+      - run: npm stage publish --access public
